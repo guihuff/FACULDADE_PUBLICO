@@ -1,0 +1,66 @@
+{clone}
+git clone <SSH>
+
+git status
+
+git log
+
+git add .
+
+{separar commit}
+git add -i
+
+{adiciona no ultimo commit}
+git commit --amend 
+
+{baixar atualização}
+git pull
+
+{comandos que podem ajudar ao atualizar}
+git reset soft
+git stash
+
+{enviar}
+git push
+
+{Fez Merda}
+git reflog
+git --reset --hard <commit>
+
+
+Git commit -m "" --amend
+{Posso mudar a mensagem do último commit}
+
+Git reset --hard 'hash'
+{Volto para o commit com esse hash e perco as alterações feitas depois dele}
+
+Git reset --soft 'hash'
+{Volto para o commit com esse hash e não perco as alterações feitas depois dele}
+
+Git rebase -i HEAD~"3"
+{Vai abrir no editor pra você dar rebase nos 3 últimos commits.
+Usando pick e squash consigo juntar vários commits em apenas um.
+}
+Git add -i
+{Consigo adicionar os arquivos iterativamente. Bom usar quando você fez 2 coisas ao mesmo tempo,
+adiciona metade e dá um commit e dps dá commit no resto}
+
+Git add -p
+{Tenho modificações no mesmo arquivo e quero mandar em commits diferentes. 
+Ver os comandos, mas um deles é split, q foi usado no video do Akita}
+
+Git reflog
+{The reflog is an ordered list of the commits that HEAD has pointed to: it's undo history for your repo.}
+
+Git checkout -b teste 'hash'
+{Se eu tiver resetado algo que eu não devia, posso dar um reflog, achar o hash que quero voltar e criar 
+um branch com ele. Depois dou checkout na master e dou git rebase teste, assim teste e master vao apontar 
+pro mesmo lugar. Depois deleto o branch teste.}
+
+Git branch -d teste
+{Deleto o branch teste.}
+
+primeiro: git remote update
+depois: git rebase -i
+{Faz o mesmo que um git pull}
+
