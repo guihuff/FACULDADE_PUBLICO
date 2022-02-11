@@ -1,0 +1,60 @@
+Gramatica 
+
+G = (V, Σ, P, S})
+G = ({S, X, Y, Z, a, b, c, d, e, f}, {a, b, c, d, e, f}, P, S)
+P = {
+
+	S → XYZ
+	X → aXcc | b
+	Y → dY | d
+	Z → eeeZf | eeef
+	
+}
+
+
+
+Automato
+
+Z = Z0
+M = ({q0, q1, q2, q3, q4, q5, q6, q7}, {a, b, c, d, e, f, X, Z}, δ, q0, Z, {q7})
+δ = {
+	(q0, a, Z) -> (q0, XXZ)
+	(q0, a, X) -> (q0, XXX)
+	(q0, b, Z) -> (q1, Z)
+	(q0, b, X) -> (q1, X)
+	(q1, c, X) -> (q1, ε)
+	(q1, d, Z) -> (q2, Z)
+	(q2, d, Z) -> (q2, Z)
+	(q2, e, Z) -> (q3, XZ)
+	(q3, e, X) -> (q4, X)
+	(q4, e, X) -> (q5, X)
+	(q5, e, X) -> (q3, XX)
+	(q5, f, X) -> (q6, ε)
+	(q6, f, X) -> (q6, ε)
+	(q6, ε, Z) -> (q7, ε)
+}
+
+Automato 2
+
+Z = Z0
+M = ({q0, q1, q2, q3, q4, q5, q6, q7, q8}, {a, b, c, d, e, f, Z, A}, δ, q0, Z, {q8})
+δ = {
+	(q0, a, Z) -> (q1, AAZ)
+	(q0, b, Z) -> (q2, Z)
+	(q1, a, A) -> (q1, AAA)
+	(q1, b, A) -> (q2, A)
+	(q2, c, A) -> (q2, ε)
+	(q2, d, Z) -> (q3, Z)
+	(q3, d, Z) -> (q3, Z)
+	(q3, e, Z) -> (q4, Z)
+	(q4, e, Z) -> (q5, Z)
+	(q4, e, A) -> (q5, A)
+	(q5, e, Z) -> (q6, Z)
+	(q5, e, A) -> (q6, A)
+	(q6, e, A) -> (q4, AA)
+	(q6, e, Z) -> (q3, AZ)
+	(q6, f, A) -> (q7, ε)
+	(q6, f, Z) -> (q8, ε)
+	(q7, f, Z) -> (q8, ε)
+	(q7, f, A) -> (q7, ε)
+}
