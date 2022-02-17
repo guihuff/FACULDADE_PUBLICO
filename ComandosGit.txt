@@ -64,3 +64,11 @@ primeiro: git remote update
 depois: git rebase -i
 {Faz o mesmo que um git pull}
 
+
+{BRANCHS}
+git branch -a
+
+git checkout -b <nome> origin/<nome>
+
+git fetch --all
+git pull --all
