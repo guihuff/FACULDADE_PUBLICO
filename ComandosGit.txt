@@ -64,3 +64,5 @@ primeiro: git remote update
 depois: git rebase -i
 {Faz o mesmo que um git pull}
 
+git pull origi/main
+{baixa o foi enviado para main}
